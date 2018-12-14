@@ -1,45 +1,48 @@
 'use strict';
 
-// add image tag to #result
-const robot = 'images/myRobot.png';
+window.addEventListener('load', function() {
 
-let img = document.createElement("img");
-img.src = robot;
-img.alt = 'A dangerous, wicked robot';
-img.class = 'xxx-btn';
-img.style.position = 'absolute';
-result.appendChild(img); // now it's visible in #result
+  // add image tag to #result
+  const robot = 'images/myRobot.png';
 
-// sound MP3: happy birthday
-const happy = 'sounds/happy.mp3'; // ye merrie melody
-myMusic.controls = true;
-myMusic.src = happy;
-myMusic.currentTime= true;
-myMusic.style.height = '75px';
-myMusic.style.position = 'absolute';
-myMusic.style.top = '187px';
+  let img = document.createElement("img");
+  img.src = robot;
+  img.alt = 'A dangerous, wicked robot';
+  img.style.position = 'absolute';
+  result.appendChild(img); // now it's visible in #result
 
-// speed
-let speed = 35;
+  // sound MP3: happy birthday
+  const happy = 'sounds/happy.mp3'; // ye merrie melody
+  myMusic.controls = false;
+  myMusic.src = happy;
+  myMusic.currentTime= true;
+  myMusic.style.height = '75px';
+  myMusic.style.position = 'absolute';
+  myMusic.style.top = '350px';
 
-// moves
-let moveLeft = function(){
-  console.log('jeg mærker tydeligt et klik nu!');
-  img.style.left = speed + 'px';
-  speed += 35;
-  console.log(speed);
+  // speed
+  let speed = 35;
 
-  // sound
-  myMusic.play();
+  // function: move the robot
+  let moveLeft = function(){
+    console.log('der klikkes på');
+    img.style.left = speed + 'px';
+    speed += 35;
+    console.log(speed);
 
-  // bounce: hvad skal der ske når robotten når kanten?
+    // sound
+    myMusic.play();
 
-  // bounce: og den anden kant?
+    // bounce: what's going to happen in that case?
 
-  // hitpoints?
-}
+    // hitpoints?
 
-// event: museklik direkte på DOM
-let klik = document.addEventListener(
-  'click',  moveLeft
-);
+    // collisions ... ?
+  }
+
+  // event: museklik direkte på DOM
+  let klik = document.addEventListener(
+    'click',  moveLeft
+  );
+
+});
