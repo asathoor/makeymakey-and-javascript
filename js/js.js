@@ -17,14 +17,14 @@ myMusic.src = happy;
 myMusic.currentTime= true;
 myMusic.style.height = '75px';
 myMusic.style.position = 'absolute';
-myMusic.style.top = '222px';
+myMusic.style.top = '187px';
 
 // speed
 let speed = 35;
 
 // moves
 let moveLeft = function(){
-  console.log('der klikkes på');
+  console.log('jeg mærker tydeligt et klik nu!');
   img.style.left = speed + 'px';
   speed += 35;
   console.log(speed);
